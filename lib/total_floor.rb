@@ -8,8 +8,7 @@ def total_floor(floor)
     sum_floor << floor[i] - floor[i -= 1]
     i += 2
   end
-  sum = sum_floor.inject(0) { |result, n|
+  sum_floor.inject(0) { |result, n|
     result + n.abs
   }
-  sum
 end

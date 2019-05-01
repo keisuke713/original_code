@@ -20,6 +20,3 @@ class Addending_student
     end
   end
 end
-
-user = Addending_student.new(14, 80)
-puts user.result

@@ -9,7 +9,7 @@ def divisor(num)
 end
 
 def sum_divisor(number)
-  sum = divisor(number).inject(0) { |result, n| result + n}
+  divisor(number).inject(0) { |result, n| result + n}
 end
 
 puts sum_divisor(100)
