@@ -1,14 +1,15 @@
 # 渡されたログから指定された文字列を含むログのみ抽出する
-def log_filter(str)
-  examined_str = str[1..-1]
+#例 指定する文字列'ub',調べる文字列['ruby', 'php'] => ruby
+
+def log_filter(str,chars)
   i = 0
-  while i < examined_str.length
-    include_str = examined_str.select { |s|
-      s.include?(str[0])
+  while i < chars.length
+    include_chars = chars.select { |s|
+      s.include?(str)
     }
     i += 1
   end
 
-  return include_str if include_str.length > 1
+  return include_chars if include_chars.length != 0
   'None'
 end

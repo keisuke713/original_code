@@ -1,5 +1,5 @@
 #渡された値の約数を全て足した値を返す
-
+#例 num = 10  => 18
 def divisor(num)
   (1..num).select do |n|
     num % n == 0
