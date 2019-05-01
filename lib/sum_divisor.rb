@@ -11,5 +11,3 @@ end
 def sum_divisor(number)
   divisor(number).inject(0) { |result, n| result + n}
 end
-
-puts sum_divisor(100)
