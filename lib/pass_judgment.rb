@@ -19,7 +19,7 @@ def pass_judgment(result_pass)
         sum_two_score(score_array[3],score_array[4])
       end
     end
-    $i += 1
+    $i += 1 
   end
   $pass_id
 end
