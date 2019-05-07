@@ -1,10 +1,13 @@
-#メロディーを配列に入れ、各要素のインデックスを調べ配列に入れる
-index = melody.chars.map do |m|
-  KEY.index(m)
+  if own == 'rock'
+    compare('scissors')
+  elsif own == 'scissors'
+    compare('paper')
+  elsif own == 'paper'
+    compare('rock')
+  end
 end
 
-def melody_array
-  melody.chars.map do |m|
-    KEY.index(m)
-  end
+def compare(i)
+  return '勝ち' if $opponent == i
+  '負け'
 end
