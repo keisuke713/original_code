@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require './lib/runner'
+
+class Runner < Minitest::Test
+  def setup
+    @user1 = Runner.new('yamada',8)
+    @user2 = Runner.new('satou',9)
+  end
+
+  def test_runner
+    assert_equal "yamadaの方が速い", @user1.competition(@user2)
+  end
+end
