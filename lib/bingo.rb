@@ -5,10 +5,9 @@ class Bingo
 
   def initialize
     @numbers =
-      (1..75).each_slice(15).map { |array|
-        array.sample(5)
-      }
-    @numbers[2][2] = ''
+      (1..75).each_slice(15)
+             .map { |array| array.sample(5) }
+             .tap { |array| array[2][2] = '' }
   end
 
   def to_s
@@ -21,3 +20,5 @@ class Bingo
     }
   end
 end
+
+p Bingo.new.to_s
