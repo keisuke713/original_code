@@ -1,7 +1,13 @@
-if array[1] < card[0][1]
-  'lose'
-else
-  'win'
-end
+numbers = [
+  %W(. , ! ?),
+  %w(a b c),
+  %w(d e f),
+  %w(g h i),
+  %w(j k l),
+  %w(m n o),
+  %w(p q r s),
+  %w(t u v),
+  %w(w x y z),
+]
 
-'win' if array[1] > card[0][1]
+p numbers
