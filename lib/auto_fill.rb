@@ -39,12 +39,12 @@ class AutoFill
 
   def sum(arr)
     @num[0].times do
-      arr << arr[-1] + dif(arr)
+      arr << arr[-1] + difference_num(arr)
     end
   end
 
   # 数字が何個ずつ増えているか返す
-  def dif(arr)
+  def difference_num(arr)
     arr[1] - arr[0]
   end
 end
