@@ -1,6 +1,6 @@
 #授業の欠席回数、テストの点を入力し、テストの点 - 5 * 授業の欠席回数が25を超えたら合格にする
 #テストの点 80, 欠席10回の場合  80 - 10 * 5 = 30 => 合格
-class Addending_student
+class Student
   attr_reader :absent_num, :test_point
 
   def initialize(absent_num, test_point)
@@ -8,15 +8,14 @@ class Addending_student
     @test_point = test_point
   end
 
-  def test_pass?
-    self.test_point - (5 * self.absent_num) >= 25
+  def result_test
+    test_pass? ? '合格' : '不合格'
   end
 
-  def result
-    if test_pass?
-      '合格'
-    else
-      '不合格'
-    end
+  private
+
+  def test_pass?
+    finaly_test_point = test_point - (5 * absent_num)
+    finaly_test_point >= 25
   end
 end
