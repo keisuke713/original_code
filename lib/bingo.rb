@@ -11,14 +11,19 @@ class Bingo
   end
 
   def to_s
-    puts %q!  B|  I|  N|  G|  O|!
-    @numbers.transpose.each { |array|
-      array.each { |n|
-        print n.to_s.rjust(3) + '|'
-      }
-      puts
+    generate.each { |array_num|
+      puts array_num.join
+    }
+  end
+
+  private
+
+  def generate
+    bingo_row = @numbers.transpose.unshift(%w!B I N G O!)
+    bingo_row.map { |array|
+      array.map { |n| n.to_s.rjust(3) + '|' }
     }
   end
 end
 
-p Bingo.new.to_s
+Bingo.new.to_s
