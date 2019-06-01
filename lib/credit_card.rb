@@ -33,11 +33,8 @@ class CreditCard
   def even_sum(even_num_array)
     even_sum = 0
     even_num_array.map(&:to_i).each do |n|
-      if 2 * n > 9
-        to_array(2 * n).each { |n| even_sum += n.to_i }
-      else
-        even_sum += 2 * n
-      end
+      num = 2 * n > 9 ? to_array(2 * n).map(&:to_i).sum : 2 * n
+      even_sum += num
     end
     even_sum
   end
