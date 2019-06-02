@@ -48,15 +48,15 @@ class Calendar
 
   def generate
     first_day = Date.new(year, month, 1)
-    end_day = Date.new(year, month, -1)
+    last_day = Date.new(year, month, -1)
 
     create_space(0, (first_day.wday - 1))
 
-    (first_day..end_day).each do |d|
+    (first_day..last_day).each do |d|
       @month_array[d.wday] << d.day
     end
 
-    create_space((end_day.wday + 1), 6)
+    create_space((last_day.wday + 1), 6)
 
     @month_array
   end
