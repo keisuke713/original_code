@@ -1,69 +1,49 @@
-require 'date'
+# 受験の結果判定システムを作る
+# 一人につき受験者番号、理系文系コード(理系なら's',文系なら'h')が与えられる
+# 理系なら5科目の合計が360以上かつ数学、理科の合計が160以上の時に合格
+# 文系なら5科目の合計が360以上かつ国語、社会の合計が160以上の時に合格
+# なお、与えられる得点の順番は左から英語、数学、理科、国語、社会である
 
-TRANSLATE_MONTH = {
-  1 => 'January',
-  2 => 'Feburary',
-  3 => 'March',
-  4 => 'April',
-  5 => 'May',
-  6 => 'June',
-  7 => 'July',
-  8 => 'August',
-  9 => 'September',
-  10 => 'October',
-  11 => 'November',
-  12 => 'December'
-}
+REGEXP = /(\d+) ([s,h]) (\d+) (\d+) (\d+) (\d+) (\d+)/
+$pass_id = [] #合格者を入れる配列
+$student = [] #一人の受験生の受験者番号、理系文系コード、5科目の得点を入れる配列
+$i = 0
 
-class Calendar
-  attr_reader :year, :month
-
-  def initialize(year, month)
-    @year = year
-    @month = month
-    @sun_array = %w(Sun)
-    @mon_array = %w(Mon)
-    @tue_array = %w(Tue)
-    @wed_array = %w(Wed)
-    @thu_array = %w(Thu)
-    @fri_array = %w(Fri)
-    @sat_array = %w(Sat)
-    @month_array = [
-      @sun_array, @mon_array, @tue_array, @wed_array, @thu_array, @fri_array, @sat_array
-    ]
-  end
-
-  def arrange_space
-    generate.map { |week_array|
-      week_array.map(&:to_s).map { |n| n.rjust(3) }
-    }.transpose
-  end
-
-  def output
-    puts "\t#{TRANSLATE_MONTH[month]} #{year}"
-    arrange_space.each { |week| puts week.join(' ') }
-  end
-
-  private
-
-  def generate
-    first_day = Date.new(year, month, 1)
-    end_day = Date.new(year, month, -1)
-
-    create_space(0, (first_day.wday - 1))
-
-    (first_day..end_day).each do |d|
-      @month_array[d.wday] << d.day
+def pass_judgment(result_pass)
+  $student = result_pass.scan(REGEXP)
+  while $i < $student.length
+    if sum_all_score?
+      if science?
+        sum_two_score(score_array[1],score_array[2])
+      else
+        sum_two_score(score_array[3],score_array[4])
+      end
     end
-
-    create_space((end_day.wday + 1), 6)
-
-    @month_array
+    $i += 1
   end
+  $pass_id
+end
 
-  def create_space(begin_day, end_day)
-    (begin_day..end_day).each do |i|
-      @month_array[i] << ' '
-    end
+#理系ならtrueを返す
+def science?
+  $student[$i][1] == 's'
+end
+
+#合計得点が360を超えているかどうか
+def sum_all_score?
+  sum = 0
+  score_array.each do |p|
+    sum += p
   end
+  sum >= 360
+end
+
+#理系なら数学と理科、文系なら国語と社会の合計が160を超えていれば合格者一覧に受験者番号を入れる
+def sum_two_score(score1,score2)
+  $pass_id << $student[$i][0] if (score1 + score2) >= 160
+end
+
+#正規表現で配列に入っている受験者番号、理系文系コード、各科目の得点の内、得点のみを配列に入れ返す
+def score_array
+  $student[$i][2..6].map( &:to_i )
 end
