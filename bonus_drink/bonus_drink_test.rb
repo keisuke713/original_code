@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/bonus_drink'
+require './bonus_drink/bonus_drink'
 
 class BonusDrinkTest < Minitest::Test
   def setup

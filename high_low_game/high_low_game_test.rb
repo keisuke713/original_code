@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/high_low_game'
+require './high_low_game/high_low_game'
 
 class HighLowGameTest < Minitest::Test
   def test_high_low_game

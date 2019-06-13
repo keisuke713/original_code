@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/stock_check'
+require './stock_check/stock_check'
 
 class StockCheckTest < Minitest::Test
   def test_stock_check

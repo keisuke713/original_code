@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/student'
+require './student/student'
 
 class StudentTest < Minitest::Test
   def setup

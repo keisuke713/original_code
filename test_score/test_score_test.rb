@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/test_score'
+require './test_score/test_score'
 
 class TestScoreTest < Minitest::Test
   def setup

@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/array_numbers'
+require './array_numbers/array_numbers'
 
 class ArrayNumbersTest < Minitest::Test
   def setup

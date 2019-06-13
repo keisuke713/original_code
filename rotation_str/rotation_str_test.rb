@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/rotation_str'
+require './rotation_str/rotation_str'
 
 class RotationStr < Minitest::Test
   def test_rotation_str

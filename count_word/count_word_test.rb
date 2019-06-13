@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/count_word'
+require './count_word/count_word'
 
 class CountWordTest < Minitest::Test
   def setup

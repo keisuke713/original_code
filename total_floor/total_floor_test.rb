@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/total_floor'
+require './total_floor/total_floor'
 
 class TotalFloor < Minitest::Test
   def test_total_floor

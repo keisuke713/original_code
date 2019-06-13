@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/page'
+require './page/page'
 
 class PageTest < Minitest::Test
   def setup

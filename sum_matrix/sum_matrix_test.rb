@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/sum_matrix'
+require './sum_matrix/sum_matrix'
 
 class SumMatrixTest < Minitest::Test
 

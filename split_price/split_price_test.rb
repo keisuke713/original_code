@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/split_price'
+require './split_price/split_price'
 
 class SplitPriceTest < Minitest::Test
   def test_split_price

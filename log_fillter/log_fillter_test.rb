@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/log_filter'
+require './log_filter/log_filter'
 
 class LogFilterTest < Minitest::Test
   def test_log_filter

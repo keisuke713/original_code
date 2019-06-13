@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/auto_fill'
+require './auto_fill/auto_fill'
 
 class AutoFillTest < Minitest::Test
   def setup

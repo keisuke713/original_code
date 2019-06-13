@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/sum_divisor'
+require './sum_divisor/sum_divisor'
 
 class SumDivisor < Minitest::Test
   def test_sum_divisor

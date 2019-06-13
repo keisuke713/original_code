@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/phone'
+require './phone/phone'
 
 class InputChaTest < Minitest::Test
   def setup

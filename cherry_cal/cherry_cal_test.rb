@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/cherry_calc'
+require './cherry_cal/cherry_calc'
 
 class CherryCalcTest < Minitest::Test
   def test_cherry_calc

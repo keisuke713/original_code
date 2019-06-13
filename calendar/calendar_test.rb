@@ -1,6 +1,6 @@
 require 'date'
 require 'minitest/autorun'
-require './lib/calendar'
+require './calendar/calendar'
 
 class CalendarTest < Minitest::Test
   def setup

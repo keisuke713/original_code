@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/exam_candidate'
+require './exam_candidate/exam_candidate'
 
 class ExamCandidateTest < Minitest::Test
   def setup

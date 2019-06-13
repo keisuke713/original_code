@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/credit_card'
+require './credit_card/credit_card'
 
 class CreditCardTest< Minitest::Test
   def setup

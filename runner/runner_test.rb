@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/runner'
+require './runner/runner'
 
 class RunnerTest < Minitest::Test
   def setup

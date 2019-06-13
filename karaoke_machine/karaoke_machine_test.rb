@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './lib/karaoke_machine'
+require './karaoke_machine/karaoke_machine'
 
 class KaraokeMachineTest < Minitest::Test
   def setup
