@@ -4,7 +4,7 @@
 また、新たに従業員を設定することも可能です
 
 例 SalaryCalcSystem.new(Employee::Manager.new).calc_salary({
-  absent_num: 0, evaluation: 'great'
+  absent_num: 0, evaluation: Great.new
   })
 
 => 70
