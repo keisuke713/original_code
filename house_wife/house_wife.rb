@@ -1,5 +1,6 @@
 class HouseWife
   attr_accessor :vacuum_cleaner, :washing_machine
+  
   def initialize
     @vacuum_cleaner  = VacuumCleaner.new
     @washing_machine = WashingMachine.new
