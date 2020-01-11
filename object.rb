@@ -13,3 +13,5 @@ p foo.hoge
 
 bar = Foo.new('manami')
 p bar.hoge
+
+p bar.hoge
